@@ -32,3 +32,25 @@ Bu proje, sıfırdan kullanıcı kimlik doğrulama, abonelik sistemi, ödeme alt
 git clone https://github.com/Burhan-er/saas-app.git
 cd saas-app.git
 npm install
+```
+---
+
+## .env.local dosyası
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+
+#VAPI
+            
+NEXT_PUBLIC_VAPI_WEB_TOKEN = 
+
+```
