@@ -6,8 +6,8 @@ Bu proje, sıfırdan kullanıcı kimlik doğrulama, abonelik sistemi, ödeme alt
 ## 🔧 Kullanılan Teknolojiler
 
 - **Next.js** – Modern, tam yığın React framework'ü
-- **Supabase** – Gerçek zamanlı veritabanı ve kimlik doğrulama hizmeti
-- **Stripe** – Abonelik ve ödeme işlemleri
+- **Supabase** – Gerçek zamanlı veritabanı ve korumalı erişim
+- **Clerk** – Abonelik ve ödeme işlemleri, auth ve kimlik doğrulama hizmeti
 - **Vapi** – Gerçek zamanlı sesli iletişim (Voice API)
 - **OpenAI (AI Voice Agent)** – Yapay zeka destekli sesli öğretmen/yardımcı
 
@@ -16,7 +16,7 @@ Bu proje, sıfırdan kullanıcı kimlik doğrulama, abonelik sistemi, ödeme alt
 ## 📚 Özellikler
 
 ✅ Kullanıcı Kaydı ve Girişi (JWT ile güvenli kimlik doğrulama)  
-✅ Stripe ile Aylık/Yıllık Abonelik ve Ödeme Sistemi  
+✅ Clerk ile Aylık/Yıllık Abonelik ve Ödeme Sistemi  
 ✅ Kullanıcıya özel ders oturumları ve geçmiş takibi  
 ✅ Gerçek zamanlı öğrenme modülü (Vapi ile sesli görüşme)  
 ✅ Yapay Zeka destekli konuşan eğitmen (AI voice agent)  
