@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Table,
   TableBody,
@@ -6,9 +8,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { addBookmark } from "@/lib/actions/companion.actions";
 import { cn, getSubjectColor } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface CompanionListProps {
   title: string;
@@ -21,6 +25,7 @@ const CompanionList = ({
   companions,
   classNames,
 }: CompanionListProps) => {
+  const pathname = usePathname()
   return (
     <section className={cn("companion-list", classNames)}>
       <h2 className="font-bold text-3xl">{title}</h2>
@@ -33,7 +38,7 @@ const CompanionList = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {companions?.map(({id,subject,name,topic,duration}) => (
+          {companions?.map(({id,subject,name,topic,duration,isBookmarked}) => (
             <TableRow key={id}>
               <TableCell>
                 <Link href={`companions/${id}`}>
@@ -71,7 +76,7 @@ const CompanionList = ({
                     {duration}{" "}
                     <span className="max-md:hidden">min</span>
                   </p>
-                <Image src={"/icons/clock.svg"} alt="Clock Icon" width={15} height={15} className="md:hidden"/> 
+                <Image onClick={()=>{addBookmark(id,pathname)}} src={isBookmarked ? "/icons/filled.svg":"/icons/clock.svg"} alt="Clock Icon" width={15} height={15} className="md:hidden"/> 
                 </div>
               </TableCell>
             </TableRow>
