@@ -41,11 +41,14 @@ export const getAllCompanions = async ({ limit = 10, page = 1, subject, topic }:
 
     if(error) throw new Error(error.message);
     
-    
+    type B = {
+        user_id:string
+    }
+
     // Mark if bookmarked
     const companions = data.map(companion => ({
       ...companion,
-      isBookmarked: companion.bookmarks?.some((b) => b.user_id === userId) ?? false,
+      isBookmarked: companion.bookmarks?.some((b :B) => b.user_id === userId) ?? false,
     }));
     
     console.log(companions)

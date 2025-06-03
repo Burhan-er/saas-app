@@ -19,11 +19,11 @@ export const configureAssistant = (voice: string, style: string) => {
   const vapiAssistant: CreateAssistantDTO = {
     name: "Companion",
     firstMessage:
-        "Hello, let's start the session. Today we'll be talking about {{topic}}.",
+        "Merhaba Bugün {{topic}} hakkında konuşacağız.",
     transcriber: {
       provider: "deepgram",
       model: "nova-3",
-      language: "en",
+      language: "tr",
     },
     voice: {
       provider: "11labs",
@@ -54,7 +54,9 @@ export const configureAssistant = (voice: string, style: string) => {
         },
       ],
     },
+    //@ts-expect-error clientMessages
     clientMessages: [],
+    //@ts-expect-error serverMessages
     serverMessages: [],
   };
   return vapiAssistant;
